@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  height: 80vh;
+  background-color: #f6f2ff;
+}
+.createEventButton {
+  background: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
+  width: 320px;
+  height: 55px;
+}
+.snapChatName {
+  background-image: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+h3 {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  color: #240d57;
+}
+.hostName {
+  color: grey;
+}
+.hostName span {
+  color: rgb(90, 89, 89);
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10% 0 10% 10%;
+  }
+}
