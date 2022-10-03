@@ -104,6 +104,7 @@ function EventDetail() {
                     <Form.Control
                       type="datetime-local"
                       re="true"
+                      required
                       onChange={(e) => setDate(e.target.value)}
                     />
                   </FloatingLabel>
