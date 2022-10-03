@@ -4,13 +4,13 @@ import Card from "react-bootstrap/Card";
 import birthdayCake from "../images/Birthday cake.png";
 import { BsCalendar2Date } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
-import "react-datepicker/dist/react-datepicker.css";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 import { useNavigate, useLocation } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { Link } from "react-router-dom";
-import View from "./View";
 import Confirmation from "./Confirmation";
 
 function EventDetail() {
@@ -49,11 +49,18 @@ function EventDetail() {
         {true ? (
           <Row>
             <Col sm={7}>
-              <div className="mb-3">
+              <div className="mb-3  ">
                 <label htmlFor="formFile" className="form-label">
-                  Upload Event Photo
+                  <h3>Upload Event Photo</h3>
                 </label>
-                {file && <img src={preview} alt={file.name} width="300px" />}
+                {file && (
+                  <img
+                    src={preview}
+                    alt={file.name}
+                    width="300px"
+                    className="rounded my-3"
+                  />
+                )}
                 <input
                   className="form-control"
                   type="file"
@@ -64,49 +71,64 @@ function EventDetail() {
               </div>
             </Col>
             <Col sm={5}>
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <h3>Event name</h3>
-                  <input
+              <form onSubmit={handleSubmit} className="">
+                <h3>Event name</h3>
+                <FloatingLabel controlId="floatingInput" className="mb-3">
+                  <Form.Control
                     type="text"
                     required
                     value={eventName}
                     onChange={(e) => setEventName(e.target.value)}
                   />
-                </div>
+                </FloatingLabel>
+
                 <div>
                   <h3>Host name</h3>
-                  <input
-                    type="text"
-                    required
-                    value={hostName}
-                    onChange={(e) => setHostName(e.target.value)}
-                  />
+                  <FloatingLabel controlId="floatingInput" className="mb-3">
+                    <Form.Control
+                      type="text"
+                      required
+                      value={hostName}
+                      onChange={(e) => setHostName(e.target.value)}
+                    />
+                  </FloatingLabel>
                 </div>
 
                 <div>
-                  <h3>Start and End time/date</h3>
-                  <BsCalendar2Date className="mx-2" />
-                  <p> {date}</p>
-                  <input
-                    type="datetime-local"
-                    re="true"
-                    onChange={(e) => setDate(e.target.value)}
-                  />
+                  <h3>
+                    {" "}
+                    <BsCalendar2Date className="mx-2" />
+                    Start and End time/date
+                  </h3>
+                  <FloatingLabel controlId="floatingInput" className="mb-3">
+                    <Form.Control
+                      type="datetime-local"
+                      re="true"
+                      onChange={(e) => setDate(e.target.value)}
+                    />
+                  </FloatingLabel>
                 </div>
                 <div>
-                  <h3>Location</h3>
-                  <ImLocation />
-                  <input
-                    type="text"
-                    required
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                  />
+                  <h3>
+                    {" "}
+                    <ImLocation />
+                    Location{" "}
+                  </h3>
+
+                  <FloatingLabel controlId="floatingInput" className="mb-3">
+                    <Form.Control
+                      type="text"
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                    />
+                  </FloatingLabel>
                 </div>
 
                 <Link to="/confirmation" state={{ foo: "bar" }}></Link>
-                <button type="submit">Submit</button>
+                <button type="submit" className=" btn goBackButton my-4">
+                  Submit
+                </button>
               </form>
             </Col>
           </Row>

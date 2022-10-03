@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { ImLocation } from "react-icons/im";
+import { BsCalendar2Date } from "react-icons/bs";
 function Confirmation() {
   const { state } = useLocation();
   const { eventName, hostName, date, location, preview } = state;
@@ -15,9 +17,17 @@ function Confirmation() {
           <p>{eventName}</p>
           <h3>Host Name </h3>
           <p>{hostName}</p>
-          <h3> Date and Time</h3>
+          <h3>
+            {" "}
+            <BsCalendar2Date className="mx-2" />
+            Date and Time
+          </h3>
           <p>{date}</p>
-          <h3> Location</h3>
+          <h3>
+            {" "}
+            <ImLocation />
+            Location
+          </h3>
           <p>{location}</p>
         </Card.Text>
         <Link to="/">
