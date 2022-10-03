@@ -12,6 +12,18 @@ body {
   background: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
   width: 320px;
   height: 55px;
+  transition: padding 5s;
+}
+.goBackButton {
+  background: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
+  color: white;
+  transition: all 5s;
+}
+.goBackButton:hover,
+.createEventButton:hover {
+  color: white !important;
+
+  background: linear-gradient(90deg, #e87bf8 3.25%, #8456ec 100%);
 }
 .snapChatName {
   background-image: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
